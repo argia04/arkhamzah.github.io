@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Greensmile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body class="fade-in">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="assets/smile.png" alt="Greensmile Logo" class="logo">
+            <span class="ml-2">Greensmile</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+                <li class="nav-item"><a class="nav-link active" href="dashboard.html">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+
+    <!-- Global Impact Map Section -->
+    <section id="impact-map" class="impact-map-section mt-5 fade-in-element">
+        <div class="container text-center">
+            <h2 class="section-title">Global Impact Map</h2>
+            <p class="section-description">Explore Greensmile's worldwide environmental impact</p>
+            <div id="map" class="map-container"></div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard-section fade-in-element">
+        <div class="container text-center">
+            <h2 class="section-title">Real-time Dashboard</h2>
+            <p class="section-description">Live data monitoring for sustainable impact</p>
+            <div class="row mt-4">
+                <!-- Stats Cards with Real-Time and Static Data -->
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <i class="fas fa-recycle card-icon"></i>
+                        <h3 class="stat-number" data-count="1200">0</h3>
+                        <p>Recyclable Items</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <i class="fas fa-chart-line card-icon"></i>
+                        <h3 class="stat-number" data-count="3400">0</h3>
+                        <p>Waste Reduced (kg)</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <i class="fas fa-leaf card-icon"></i>
+                        <h3 class="stat-number" data-count="750">0</h3>
+                        <p>Eco Projects</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <i class="fas fa-globe card-icon"></i>
+                        <h3 class="stat-number" data-count="530">0</h3>
+                        <p>Global Impact</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real-time Chart Section -->
+            <div class="chart-section mt-5">
+                <canvas id="trash-stats-chart" class="chart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2024 Greensmile. All rights reserved.</p>
+            <button id="scrollToTop" class="btn btn-light" aria-label="Scroll to top">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Trend Notification -->
+    <div id="trend-notification" class="trend-notification"></div>
+
+    <!-- Floating Action Button to Toggle Notification -->
+    <button id="floatingActionButton" class="floating-action-button" onclick="toggleNotification()">
+        <i class="fas fa-bell"></i>
+    </button>
+
+    <!-- Include JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
